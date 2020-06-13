@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Study</title>
+<meta charset="UTF-8">
+<script>
+var question=[["江戸幕府の三代目将軍は？",
+"speakの過去分詞系は？"],
+["次の元素のうちから、典型元素であり、金属元素であるものを１つ選べ。 F,Na,P,S,Cu",
+"カルシウムCaから生じるイオンの電子配置を、K2,L8のように記せ。",
+"次の記述のうち、正しいものをすべて選べ。番号を1,2のように記せ。1)陽イオンは、もとの原子より大きい。2)陰イオンは、もとの原子より大きい。3)同じ電子配置のイオンは、原子番号が小さいほど大きい。4)同族元素のイオンは、原子番号が小さいほど大きい。",
+"次の組成式で表される物質名をこたえよ。CuCO₃",
+"次の組成式で表される物質名をこたえよ。(NH₄)₂S",
+"次の組成式で表される物質名をこたえよ。CH₃COONa",
+"塩化水素分子HClには非共有電子対がいくつあるか。",
+"次の分子から折れ線型のものを1つ選べ。塩化水素,二酸化炭素,アンモニア,硫化水素,メタン,塩化メチル",
+"1個のアンモニウムイオンに含まれる非共有電子対は何個か。",
+"アンモニアの気体に濃塩酸をつけたガラス棒を近づけると白煙を生じる。この白煙の物質名を答えよ。",
+"次の分子から極性分子を選べ。メタン,硫化水素,塩化メチル,二酸化炭素,アンモニア,塩素　,で区切って示せ。上から順番でね。",
+"水は硫化水素よりも沸点が高い（p69図30）。その理由となる分子間の引力を漢字四文字で答えよ。",
+"ダイヤモンドと黒鉛で電気を導くのはどちらか。",
+"金属は（　　）が電気や熱を伝えるため、電気伝導性や熱伝導性に優れる。",
+"金属を、たたいて箔にすることができる性質を何と言うか。",
+"金属を、引き伸ばせる性質を何と言うか。"],
+["B.C.3500頃～ナイル川河畔に（　　　　　(都市)）成立",
+"エジプトの第三期　上エジプト王(               ) が下エジプト王国を支配し、統一エジプト王国が成立。",
+"エジプト第４期　第3(2686~2613)・4(~2498)・5(~2345)・6(~2181)王朝　（　　　　　　　　）",
+"エジプトの第四期　王は太陽神(　　　)の化身であった",
+"エジプト第四期　首都は(　　　　　)であった。",
+"エジプト第四期　代表的な建造物として(　　　　　)と(　　　　　　)がある。,で区切ってこたえよ。",
+"ギザの三大ピラミッドはだれのものか。,で区切って答えよ。名前短い順",
+"エジプト第五期　複数の王朝が同時期に存在した分裂期",
+"エジプト第五期　太陽神(　　　)を信仰していた。",
+"エジプト第６期　第11(~1991)・12(~1782(1802))王朝　（　　　　　　　　）",
+"エジプト第六期　首都はどこか",
+"第７期　第13(1782(1802)~1650(49))・14(1725~1650)・15(1668~1560)・16(?)・17(1668~1570)王朝",
+"第８期　第18(1570~1293)・19(~1185)・20(~1070)王朝　（　　　　　　　　）",
+"1570~1546〔　　　　　　〕　第16王朝系（上エジプト）",
+"1504~1450〔　　　　　　　　〕　領土最大に",
+"1350~1334〔　　　　　　　　　〕　多神教からアテン一神教に改革企図。その死で挫折。",
+"アメンヘテプ4世は首都をテーベから（　　　　　　　　　）へ移し（　　　　　　　　）と改名。",
+"アメンヘテプ4世は(　　　　　)と改名した。",
+"トゥト・アンク・アテンはトゥト・アンク・アメンに改名した。英語名は？",
+"エジプト第10期　非エジプト人の王朝が(　　　　　)により征服される。","1279~1212〔　　　　　（ラ・メス）２世〕　古代エジプト最盛期　→　以後次第に衰退　空欄を埋めよ。"]],answer=[["徳川家光",
+"spoken"],["Na",
+"K2,L8,M8",
+"2,3",
+"炭酸銅(Ⅱ)",
+"硫化アンモニウム",
+"酢酸ナトリウム",
+"3",
+"硫化水素",
+"0",
+"塩化アンモニウム",
+"硫化水素,塩化メチル,アンモニア",
+"水素結合",
+"黒鉛",
+"自由電子",
+"展性",
+"延性"],
+["ノモス",
+"ナルメル",
+"古王国",
+"ラー",
+"メンフィス",
+"ピラミッド,スフィンクス",
+"クフ,カフラー,メンカウラー",
+"第一中間期",
+"アメン",
+"中王国",
+"テーベ",
+"第二中間期",
+"新王国",
+"アアフメス",
+"トゥトメス3世",
+"アメンヘテプ4世",
+"テル=エル=アマルナ,アケトアテン",
+"イクエンア",
+"ツタンカーメン",
+"アッシリア",
+"ラメセス"]];
+var solve,point=0;
+var kind=0,kinds=["test","化学","世界史"];//kindは追加
+function ask(){
+var number=Math.floor(Math.random()*question[kind].length);
+document.getElementById("question").textContent=question[kind][number];
+solve=answer[kind][number];
+document.getElementById("answer").value="";//あとから追加したよ
+}
+function check(){
+var playersolve=document.getElementById("answer").value;
+if(solve===playersolve){
+point+=10;
+document.getElementById("comment").textContent="正解";
+}else{
+point-=5;
+document.getElementById("comment").textContent="不正解、、、答えは"+solve;
+}
+document.getElementById("point").textContent=point;
+ask();
+}
+onload=function(){                                                         //added
+document.getElementById("set").style.display="none";
+for(var i=0;i<kinds.length;i++){
+var select=document.createElement("option");
+select.value=i;
+select.text=kinds[i];
+document.getElementById("select").appendChild(select);
+}
+}
+function start(){
+document.getElementById("set").style.display="block";
+document.getElementById("starter").style.display="none";
+kind=document.getElementById("select").value;
+ask();
+}
+//div selectはadded
+</script>
+</head>
+<body>
+<div id="set">                        
+<p>問題：<span id="question"></span></p>
+<input id="answer"/>
+<button onclick="check()">check</button>
+<p>貴様の得点は<span id="point"></span></p>
+<p id="comment"></p>
+</div>
+<div id="starter">
+<select id="select">
+
+</select>
+<button onclick="start()">start</button>
+</div>
+</body>
+</html>
